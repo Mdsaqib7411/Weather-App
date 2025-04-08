@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Only include one Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <div class="header">
+                <h1 class="app-title">Weather Forecast</h1>
+                <div class="search-box">
+                    <input type="text" placeholder="Enter city name..." class="input-box">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="location-not-found">
+                <img src="https://cdn-icons-png.flaticon.com/512/4275/4275497.png" alt="404 Error">
+                <h1>Location not found</h1>
+                <p>Please try another location</p>
+            </div>
+
+            <div class="weather-body">
+                <div class="weather-info">
+                    <div class="current-weather">
+                        <div class="weather-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png" alt="Weather Icon">
+                        </div>
+                        <div class="temperature-box">
+                            <p class="temperature">0<span>°C</span></p>
+                            <p class="description">Partly Cloudy</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> <span id="city-name">City Name</span></p>
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-card humidity">
+                            <i class="fas fa-tint"></i>
+                            <div class="text">
+                                <span id="humidity">45%</span>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-card wind">
+                            <i class="fas fa-wind"></i>
+                            <div class="text">
+                                <span id="wind-speed">12 km/h</span>
+                                <p>Wind Speed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-card haze">
+                            <i class="fas fa-smog"></i>
+                            <div class="text">
+                                <span id="haze-level">60%</span>
+                                <p>Haze Level</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solar and Lunar Data Section -->
+                    <div class="astronomical-data">
+                        <h3>Solar & Lunar Data</h3>
+                        <div class="astro-cards">
+                            <div class="astro-card sun">
+                                <i class="fas fa-sun"></i>
+                                <div class="astro-text">
+                                    <span id="sunrise">06:45 AM</span>
+                                    <p>Sunrise</p>
+                                </div>
+                                <div class="astro-text">
+                                    <span id="sunset">06:30 PM</span>
+                                    <p>Sunset</p>
+                                </div>
+                            </div>
+                            
+                            <div class="astro-card moon">
+                                <i class="fas fa-moon"></i>
+                                <div class="astro-text">
+                                    <span id="moonrise">07:15 PM</span>
+                                    <p>Moonrise</p>
+                                </div>
+                                <div class="astro-text">
+                                    <span id="moonset">06:45 AM</span>
+                                    <p>Moonset</p>
+                                </div>
+                            </div>
+                            
+                            <div class="astro-card moon-phase">
+                                <i class="fas fa-moon" id="moon-phase-icon"></i>
+                                <div class="astro-text">
+                                    <span id="moon-phase">Waxing Gibbous</span>
+                                    <p>Moon Phase</p>
+                                </div>
+                                <div class="astro-text">
+                                    <span id="moon-illumination">78%</span>
+                                    <p>Illumination</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forecast-container">
+                    <h2>7-Day Forecast</h2>
+                    <div class="forecast-cards">
+                        <!-- Forecast cards will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

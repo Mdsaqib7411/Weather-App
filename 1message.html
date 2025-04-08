@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Update</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-dark: #3f37c9;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4cc9f0;
+      --danger: #f72585;
+      --warning: #ff6a00;
+      --card-bg: rgba(255, 255, 255, 0.1);
+      --text-gradient: linear-gradient(to right, #fff, #ddd);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #ff6a00, #4cc9f0);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: var(--light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      background: var(--text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--light);
+    }
+
+    .weather-btn {
+      background-color: var(--light);
+      color: var(--primary-dark);
+      padding: 0.75rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .weather-btn i {
+      font-size: 1rem;
+    }
+
+    .weather-btn:hover {
+      background-color: var(--success);
+      color: var(--dark);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .weather-btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main role="main">
+    <h1>السَّلامُ عَلَيْكُمْ<br><span style="font-size: 1.75rem;">Brothers & Sisters</span></h1>
+    <p>Click below to get today latest weather updates.</p>
+    <a href="index.html" class="weather-btn">
+      <i class="fas fa-cloud-sun"></i> Check Weather
+    </a>
+  </main>
+</body>
+</html>
