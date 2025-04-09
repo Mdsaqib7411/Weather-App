@@ -190,3 +190,57 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the app
     initializeApp();
 });
+// ========== Welcome Message Logic ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const welcomeContainer = document.getElementById('welcome');
+    const weatherApp = document.getElementById('weatherApp');
+    const showWeatherBtn = document.getElementById('showWeatherBtn');
+    
+    // Function to show weather app
+    function showWeatherApp() {
+        // Remove transition effects immediately
+        welcomeContainer.style.transition = 'none';
+        showWeatherBtn.style.transition = 'none';
+        
+        // Hide elements without animation
+        welcomeContainer.style.display = 'none';
+        showWeatherBtn.style.display = 'none';
+        
+        // Show weather app immediately
+        weatherApp.classList.remove('hide');
+        
+        // Initialize the weather app after showing it
+        initializeApp();
+    }
+
+    // Load welcome message from 1message.html
+    fetch('1message.html')
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Failed to load welcome message');
+            }
+            return res.text();
+        })
+        .then(html => {
+            welcomeContainer.innerHTML = html;
+            
+            // Now the button exists, attach event listener
+            const welcomeBtn = document.querySelector('#welcome .weather-btn') || showWeatherBtn;
+            if (welcomeBtn) {
+                welcomeBtn.addEventListener('click', showWeatherApp);
+            }
+        })
+        .catch(error => {
+            console.error('Error loading welcome message:', error);
+            // If welcome message fails to load, show weather app directly
+            welcomeContainer.style.display = 'none';
+            showWeatherBtn.style.display = 'none';
+            weatherApp.classList.remove('hide');
+            initializeApp();
+        });
+
+    // Also allow the main button to work
+    if (showWeatherBtn) {
+        showWeatherBtn.addEventListener('click', showWeatherApp);
+    }
+});
