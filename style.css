@@ -1,365 +1,353 @@
 :root {
-    --primary: #4361ee;
-    --primary-dark: #3f37c9;
-    --accent: #4895ef;
-    --light: #f8f9fa;
-    --dark: #212529;
-    --success: #4cc9f0;
-    --danger: #f72585;
-    --warning: #f8961e;
-    --card-bg: rgba(255, 255, 255, 0.1);
-    --text-gradient: linear-gradient(to right, #fff, #ddd);
-    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary: #4361ee;
+  --primary-dark: #3f37c9;
+  --accent: #4895ef;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --text-gradient: linear-gradient(to right, #fff, #ddd);
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg-gradient);
-    color: var(--light);
-    padding: 1.25rem;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-gradient);
+  color: var(--light);
+  padding: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
 }
 
 .container {
-    width: min(100%, 50rem);
-    margin: 0 auto;
+  width: min(100%, 50rem);
+  margin: 0 auto;
 }
 
 .weather-app {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(0.625rem);
-    border-radius: 1.25rem;
-    padding: 1.875rem;
-    box-shadow: 0 0.9375rem 2.1875rem rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  padding: 1.875rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 1.875rem;
+  text-align: center;
+  margin-bottom: 1.875rem;
 }
 
 .app-title {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    margin-bottom: 1.25rem;
-    background: var(--text-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 1.25rem;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .search-box {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.25rem;
-    gap: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  gap: 0;
 }
 
 .input-box {
-    width: 70%;
-    padding: 0.9375rem 1.25rem;
-    border-radius: 3.125rem 0 0 3.125rem;
-    border: none;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-    color: var(--dark);
+  width: 70%;
+  padding: 0.9375rem 1.25rem;
+  border-radius: 3.125rem 0 0 3.125rem;
+  border: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--dark);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-box:focus {
-    background: white;
-    outline: none;
-    box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.5);
+  background: white;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .input-box::placeholder {
-    color: var(--dark);
-    opacity: 0.7;
+  color: var(--dark);
+  opacity: 0.7;
 }
 
 .search-btn {
-    width: 3.125rem;
-    aspect-ratio: 1;
-    border-radius: 0 3.125rem 3.125rem 0;
-    border: none;
-    background: var(--primary);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: grid;
-    place-items: center;
+  width: 3.125rem;
+  aspect-ratio: 1;
+  border-radius: 0 3.125rem 3.125rem 0;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: grid;
+  place-items: center;
 }
 
 .search-btn:hover {
-    background: var(--primary-dark);
+  background: var(--primary-dark);
 }
 
 .location-not-found {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.875rem;
-    text-align: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.875rem;
+  text-align: center;
 }
 
 .location-not-found img {
-    width: min(100%, 9.375rem);
-    margin-bottom: 1.25rem;
+  width: min(100%, 9.375rem);
+  margin-bottom: 1.25rem;
 }
 
 .location-not-found h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.625rem;
-    color: inherit;
+  font-size: 1.5rem;
+  margin-bottom: 0.625rem;
 }
 
 .location-not-found p {
-    color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .weather-body {
-    display: none;
+  display: none;
 }
 
 .weather-info {
-    margin-bottom: 1.875rem;
+  margin-bottom: 1.875rem;
 }
 
 .current-weather {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 1.875rem;
-    gap: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1.875rem;
+  gap: 1.25rem;
 }
 
 .weather-icon img {
-    width: clamp(5rem, 20vw, 7.5rem);
-    height: auto;
-    aspect-ratio: 1;
-    filter: drop-shadow(0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.2));
+  width: clamp(5rem, 20vw, 7.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
 }
 
 .temperature-box {
-    text-align: center;
+  text-align: center;
 }
 
 .temperature {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    font-weight: 600;
-    position: relative;
-    line-height: 1;
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  font-weight: 600;
+  position: relative;
+  line-height: 1;
 }
 
 .temperature span {
-    font-size: 0.5em;
-    position: absolute;
-    top: 0.2em;
+  font-size: 0.5em;
+  position: absolute;
+  top: 0.2em;
 }
 
 .description {
-    font-size: clamp(1rem, 4vw, 1.5rem);
-    text-transform: capitalize;
-    margin-top: 0.3125rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  text-transform: capitalize;
+  margin-top: 0.3125rem;
 }
 
 .weather-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
-    gap: 0.9375rem;
-    margin-top: 1.875rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+  gap: 0.9375rem;
+  margin-top: 1.875rem;
 }
 
 .detail-card {
-    background: var(--card-bg);
-    border-radius: 0.9375rem;
-    padding: 0.9375rem;
-    display: flex;
-    align-items: center;
-    backdrop-filter: blur(0.3125rem);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card-bg);
+  border-radius: 0.9375rem;
+  padding: 0.9375rem;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .detail-card:hover {
-    transform: translateY(-0.3125rem);
-    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.3125rem);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .detail-card i {
-    font-size: 1.5rem;
-    margin-right: 0.9375rem;
-    color: var(--accent);
+  font-size: 1.5rem;
+  margin-right: 0.9375rem;
+  color: var(--accent);
 }
 
 .detail-card .text {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .detail-card .text span {
-    font-size: 1.2rem;
-    font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .detail-card .text p {
-    font-size: 0.9rem;
-    opacity: 0.8;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
+/* Forecast */
 .forecast-container {
-    margin-top: 1.875rem;
+  margin-top: 1.875rem;
 }
 
 .forecast-container h2 {
-    margin-bottom: 0.9375rem;
-    font-size: 1.3rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 0.625rem;
+  margin-bottom: 0.9375rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.625rem;
 }
 
 .forecast-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
-    gap: 0.9375rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 0.9375rem;
 }
 
 .forecast-card {
-    background: var(--card-bg);
-    border-radius: 0.9375rem;
-    padding: 0.9375rem;
-    text-align: center;
-    backdrop-filter: blur(0.3125rem);
-    transition: transform 0.3s ease;
+  background: var(--card-bg);
+  border-radius: 0.9375rem;
+  padding: 0.9375rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
 }
 
 .forecast-card:hover {
-    transform: translateY(-0.3125rem);
+  transform: translateY(-0.3125rem);
 }
 
 .forecast-day {
-    font-weight: 600;
-    margin-bottom: 0.625rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
 }
 
 .forecast-icon img {
-    width: 3.125rem;
-    height: 3.125rem;
-    margin: 0.3125rem 0;
-    object-fit: contain;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin: 0.3125rem 0;
+  object-fit: contain;
 }
 
 .forecast-temp {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 48rem) {
-    .weather-app {
-        padding: 1.25rem;
-    }
-    
-    .current-weather {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .weather-details {
-        grid-template-columns: 1fr;
-    }
-    
-    .search-box {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.625rem;
-    }
-    
-    .input-box {
-        width: 100%;
-        border-radius: 3.125rem;
-    }
-    
-    .search-btn {
-        width: 3.125rem;
-        height: 3.125rem;
-        border-radius: 50%;
-    }
-}
-
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-/* Astronomical Data Section */
+/* Astro Section */
 .astronomical-data {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
 }
 
 .astronomical-data h3 {
-    margin-bottom: 15px;
-    color: #fff;
-    font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .astro-cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .astro-card {
-    flex: 1;
-    min-width: 120px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    text-align: center;
+  flex: 1;
+  min-width: 120px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-align: center;
 }
 
 .astro-card i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    color: #ffeb3b;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #ffeb3b;
 }
 
 .astro-card.moon i {
-    color: #9e9e9e;
+  color: #9e9e9e;
 }
 
 .astro-card.moon-phase i {
-    color: #e0e0e0;
+  color: #e0e0e0;
 }
 
 .astro-text {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .astro-text span {
-    font-weight: 500;
-    color: #fff;
+  font-weight: 500;
 }
 
 .astro-text p {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 2px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .current-weather {
+    flex-direction: column;
+    text-align: center;
+  }
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
+  .astro-cards {
+    flex-direction: column;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Utility */
+.hide {
+  display: none;
+}
+
+#welcome {
+  transition: opacity 0.6s ease;
 }
